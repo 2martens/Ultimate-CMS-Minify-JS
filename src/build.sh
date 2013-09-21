@@ -3,8 +3,12 @@
 ultimateCMSDir="../../de.plugins-zum-selberbauen.ultimate/"
 buildDir="../Ultimate-CMS-Minify-JS/src/"
 configFile="config.txt"
-lastCheckedCommit="$(cat $configFile)"
 yuiFile="yuicompressor-2.4.8.jar"
+
+# create config file if not existing
+touch "$configFile"
+
+lastCheckedCommit="$(cat $configFile)"
 
 # determining modified JS files
 cd "$ultimateCMSDir"
