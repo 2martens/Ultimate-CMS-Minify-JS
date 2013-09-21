@@ -12,8 +12,8 @@ git checkout dev
 git pull
 if [ "$lastCheckedCommit" = "" ]; then
 	# minimize all JS files
-	ls js/*.js acp/js/*.js | \
-	grep "\.js$" \
+	ls src/js/*.js src/acp/js/*.js | \
+	grep "\.js$" | \
 	xargs -d "\n" -n 1 -r \
 	java -jar "$buildDir$yuiFile" \
 	 --preserve-semi -o ".js$:.min.js" *.js
@@ -22,7 +22,7 @@ else
 	git diff --name-status "$lastCheckedCommit" HEAD | \
 	grep -v "^D" | \
 	sed "s/^.\s*//" | \
-	grep "[^\.]+\.js$" | \
+	grep "\.js$" | \
 	xargs -d "\n" -n 1 -r \
 	java -jar "$buildDir$yuiFile" \
 	 --preserve-semi -o ".js$:.min.js" *.js
