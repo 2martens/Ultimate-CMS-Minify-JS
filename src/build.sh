@@ -16,7 +16,7 @@ if [ "$lastCheckedCommit" = "" ]; then
 	grep "\.js$" | \
 	xargs -d "\n" -n 1 -r \
 	java -jar "$buildDir$yuiFile" \
-	 --preserve-semi -o ".js$:.min.js" *.js
+	 --preserve-semi -o ".js$:.min.js"
 else
 	# minimize changed JS files
 	git diff --name-status "$lastCheckedCommit" HEAD | \
@@ -25,7 +25,7 @@ else
 	grep "\.js$" | \
 	xargs -d "\n" -n 1 -r \
 	java -jar "$buildDir$yuiFile" \
-	 --preserve-semi -o ".js$:.min.js" *.js
+	 --preserve-semi -o ".js$:.min.js"
 fi
 
 # commit changes
