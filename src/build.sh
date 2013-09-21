@@ -9,6 +9,7 @@ yuiFile="yuicompressor-2.4.8.jar"
 # determining modified JS files
 cd "$ultimateCMSDir"
 git checkout dev
+git pull
 if [ "$lastCheckedCommit" = "" ]; then
 	# minimize all JS files
 	ls src/js/*.js src/acp/js/*.js | \
