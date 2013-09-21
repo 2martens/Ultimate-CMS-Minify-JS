@@ -1,7 +1,7 @@
 #!/bin/bash
 # variables declaration
 ultimateCMSDir="../../de.plugins-zum-selberbauen.ultimate/"
-buildDir="../../Ultimate-CMS-Minify-JS/"
+buildDir="../Ultimate-CMS-Minify-JS/src/"
 configFile="config.txt"
 lastCheckedCommit="$(cat $configFile)"
 yuiFile="yuicompressor-2.4.8.jar"
