@@ -12,7 +12,7 @@ git checkout dev
 git pull
 if [ "$lastCheckedCommit" = "" ]; then
 	# minimize all JS files
-	ls src/js/*.js src/acp/js/*.js | \
+	ls js/*.js acp/js/*.js | \
 	grep "\.js$" \
 	xargs -d "\n" -n 1 -r \
 	java -jar "$buildDir$yuiFile" \
