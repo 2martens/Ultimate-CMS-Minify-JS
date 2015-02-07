@@ -12,7 +12,7 @@ lastCheckedCommit="$(cat $configFile)"
 
 # determining modified JS files
 cd "$ultimateCMSDir"
-git checkout dev
+git checkout master
 git pull
 if [ "$lastCheckedCommit" = "" ]; then
 	# minimize all JS files
@@ -35,7 +35,7 @@ fi
 # commit changes
 git add --all
 git commit -m "Updating minified JavaScript files"
-git push origin dev
+git push origin master
 
 # save current commit to config.txt
 git rev-parse HEAD > "$buildDir$configFile"
